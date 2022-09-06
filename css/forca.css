@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 90vh;
+  margin-top: 1rem;
+  background-color: #2770d6;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#image {
+  background-image: url("../img/forca.png");
+  width: 234px;
+  height: 272px;
+  background-repeat: no-repeat;
+}
+
+#secret_word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  margin-top: 30px;
+}
+
+.letters {
+  width: 16px;
+  text-align: center;
+  border-bottom: 2px solid #d6bb11;
+  color: #e1e1e1;
+  margin: 0 3px;
+  padding: 5px;
+}
+
+.espaco{
+  width: 16px;
+  text-align: center;
+  color: #e1e1e1;
+  margin: 0 3px;
+  padding: 5px;
+
+}
+
+#keyboard {
+  margin-top: 30px;
+}
+
+.keys button {
+  width: 24px;
+  height: 24px;
+  margin: 3px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px #0a0a0aaa;
+  border-radius: 5px;
+  border: 1px solid #0a0a0aaa;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 900;
+}
+
+.keys button:hover {
+  transform: scale(1.3);
+}
+
+.keys button:disabled{
+  cursor: not-allowed;
+}
+
+#category {
+  margin-top: 36px;
+  color: #e1e1e1;
+  font-size: 1.2em;
+}
+
+@media (min-width: 376px) {
+  #keyboard .keys button {
+    width: 30px;
+    height: 30px;
+  }
+  .letters {
+    width: 18px;
+  }
+  #secret-word {
+    font-size: 1.3em;
+  }
+  #category {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 426px) {
+  #keyboard .keys button {
+    width: 36px;
+    height: 36px;
+  }
+  .letters {
+    width: 20px;
+  }
+  #secret-word {
+    font-size: 1.5em;
+  }
+  #category {
+    font-size: 1.6em;
+  }
+}
+@media (min-width: 769px) {
+  #keyboard .keys button {
+    width: 68px;
+    height: 68px;
+    font-size: 2em;
+  }
+
+  #secret-word {
+    font-size: 3.5em;
+  }
+  .letters {
+    width: 48px;
+    font-size: 2.5rem;
+  }
+  #category {
+    font-size: 2em;
+  }
+}

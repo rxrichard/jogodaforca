@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da forca</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/forca.css" media="screen" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="image"></div>
+
+      <div id="secret_word">
+        <!-- <div class="letters">A</div>
+      <div class="letters">F</div>
+      <div class="letters">A</div>
+      <div class="letters">A</div>
+      <div class="letters">A</div>
+      <div class="letters">A</div>
+      <div class="letters">A</div>
+      <div class="letters">A</div>
+      <div class="letters">A</div>
+      <div class="letters">A</div>
+      <div class="letters">A</div> -->
+      </div>
+
+      <div id="keyboard">
+        <div class="keys">
+          <button id="key-A" onclick="verificaLetraEscolhida('A')">A</button>
+          <button id="key-B" onclick="verificaLetraEscolhida('B')">B</button>
+          <button id="key-C" onclick="verificaLetraEscolhida('C')">C</button>
+          <button id="key-D" onclick="verificaLetraEscolhida('D')">D</button>
+          <button id="key-E" onclick="verificaLetraEscolhida('E')">E</button>
+          <button id="key-F" onclick="verificaLetraEscolhida('F')">F</button>
+          <button id="key-G" onclick="verificaLetraEscolhida('G')">G</button>
+          <button id="key-H" onclick="verificaLetraEscolhida('H')">H</button>
+          <button id="key-I" onclick="verificaLetraEscolhida('I')">I</button>
+        </div>
+        <div class="keys">
+          <button id="key-J" onclick="verificaLetraEscolhida('J')">J</button>
+          <button id="key-K" onclick="verificaLetraEscolhida('K')">K</button>
+          <button id="key-L" onclick="verificaLetraEscolhida('L')">L</button>
+          <button id="key-M" onclick="verificaLetraEscolhida('M')">M</button>
+          <button id="key-N" onclick="verificaLetraEscolhida('N')">N</button>
+          <button id="key-O" onclick="verificaLetraEscolhida('O')">O</button>
+          <button id="key-P" onclick="verificaLetraEscolhida('P')">P</button>
+          <button id="key-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
+          <button id="key-R" onclick="verificaLetraEscolhida('R')">R</button>
+        </div>
+        <div class="keys">
+          <button id="key-S" onclick="verificaLetraEscolhida('S')">S</button>
+          <button id="key-T" onclick="verificaLetraEscolhida('T')">T</button>
+          <button id="key-U" onclick="verificaLetraEscolhida('U')">U</button>
+          <button id="key-V" onclick="verificaLetraEscolhida('V')">V</button>
+          <button id="key-W" onclick="verificaLetraEscolhida('W')">W</button>
+          <button id="key-X" onclick="verificaLetraEscolhida('X')">X</button>
+          <button id="key-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
+          <button id="key-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
+          <button id="bnt-restart" onclick="reiniciar()">
+            🎮
+          </button>
+        </div>
+      </div>
+
+      <div id="category"></div>
+
+      <!-- INICIO MODAL-->
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="myModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="TituloModalCentralizado">
+                
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Fechar"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Fechar
+              </button>
+              <button type="button" class="btn btn-primary" id="btn-restart" onclick="reiniciar()">
+                Jogar novamente
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FIM MODAL-->
+    </div>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/forca.js"></script>
+  </body>
+</html>
