@@ -32,7 +32,7 @@ const palavras = [
     categoria: "LUGARES",
   }),
   (palavra008 = {
-    nome: "UZBEQUISTAO",
+    nome: "CHINA",
     categoria: "LUGARES",
   }),
   (palavra009 = {
@@ -80,7 +80,7 @@ const palavras = [
     categoria: "TRANSPORTE",
   }),
   (palavra020 = {
-    nome: "FUNICULAR",
+    nome: "CAMINHAO",
     categoria: "TRANSPORTE",
   }),
   (palavra021 = {
